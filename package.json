@@ -1,0 +1,29 @@
+{
+  "name": "os-tools",
+  "version": "0.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "os-tools": "./index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "buffer": "^5.2.0",
+    "cli-table": "^0.3.1",
+    "commander": "^2.17.1",
+    "inquirer": "^6.2.0",
+    "js-yaml": "^3.12.0",
+    "jsondiffpatch": "^0.3.11",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "moment-duration-format": "^2.2.2",
+    "queue": "^4.5.0"
+  },
+  "engines": {
+    "node": ">=8.11"
+  }
+}
