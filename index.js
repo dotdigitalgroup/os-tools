@@ -15,6 +15,10 @@ program
   .action(options => run('configure', options))
 
 program
+  .command('info')
+  .action(options => run('info', options))
+
+program
   .command('equalize-env')
   .option('-t, --resource-type <resourceType>', 'resource type')
   .option('-n, --resource-name <resourceName>', 'resource name')
