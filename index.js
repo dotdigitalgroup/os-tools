@@ -52,4 +52,12 @@ program
   .option('-f, --filename <filename>', 'YAML file')
   .action(options => run('updateResource', options))
 
+program
+  .command('scale')
+  .option('-t, --resource-type <resourceType>', 'resource type')
+  .option('-n, --resource-name <resourceName>', 'resource name')
+  .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
+  .option('--replicas <replicas>', 'number of replicas')
+  .action(options => run('scale', options))
+
 program.parse(process.argv)

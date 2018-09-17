@@ -69,3 +69,13 @@ $ os-tools update-resource \
   --property-path 'spec.template.spec.containers[0].readinessProbe' \
   --filename 'updated-dep-config.yaml'
 ```
+
+### Scaling applications
+
+To scale all applications from a range of namespaces, you just have to provide the regex and the number of replicas.
+
+```
+$ os-tools scale \
+  --namespace-regex '^project-name-' \
+  --replicas 1
+```
