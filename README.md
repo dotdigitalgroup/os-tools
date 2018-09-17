@@ -1,11 +1,13 @@
 # OS Tools
 
+![](https://img.shields.io/badge/node-%3E=8-green.svg)
+
 OS Tools is a support tool for OpenShift users/administrators that allows bulk operations using a regular expression to manage multiple environments.
 
 ## Installation
 
 ```
-$ npm install -g os-tools
+$ npm install -g https://github.com/dotdigitalgroup/os-tools
 ```
 
 ## Configuration
