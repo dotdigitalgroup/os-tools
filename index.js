@@ -58,9 +58,8 @@ program
 
 program
   .command('scale')
-  .option('-t, --resource-type <resourceType>', 'resource type')
-  .option('-n, --resource-name <resourceName>', 'resource name')
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
+  .option('-n, --resources-names <resourcesNames>', 'resources names', collect, [])
   .option('--ignore <ignoredNamespace>', 'namespaces to ignore', collect, [])
   .option('--replicas <replicas>', 'number of replicas')
   .action(options => run('scale', options))
