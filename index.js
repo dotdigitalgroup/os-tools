@@ -23,6 +23,7 @@ program
   .option('-t, --resource-type <resourceType>', 'resource type')
   .option('-n, --resource-name <resourceName>', 'resource name')
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
+  .option('--ignore <ignoredNamespace>', 'namespaces to ignore', collect, [])
   .option('--output-missing-vars [outputMissingVars]', 'display all the missing variables')
   .option('--store-resource-dumps [storeResourceDumps]', 'store the generated resource dumps')
   .action(options => run('equalizeEnv', options))
@@ -32,6 +33,7 @@ program
   .option('-t, --resource-type <resourceType>', 'resource type')
   .option('-n, --resource-name <resourceName>', 'resource name')
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
+  .option('--ignore <ignoredNamespace>', 'namespaces to ignore', collect, [])
   .option('-v, --variable <variable>', 'variable with name and value', collect, [])
   .action(options => run('setEnv', options))
 
@@ -40,6 +42,7 @@ program
   .option('-t, --resource-type <resourceType>', 'resource type')
   .option('-n, --resources-names <resourcesNames>', 'resources names', collect, [])
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
+  .option('--ignore <ignoredNamespace>', 'namespaces to ignore', collect, [])
   .option('-s, --source-ref [sourceRef]', 'tag/branch/commit hash from Git')
   .action(options => run('instantiate', options))
 
@@ -48,6 +51,7 @@ program
   .option('-t, --resource-type <resourceType>', 'resource type')
   .option('-n, --resource-name <resourceName>', 'resource name')
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
+  .option('--ignore <ignoredNamespace>', 'namespaces to ignore', collect, [])
   .option('-p, --property-path <propertyPath>', 'the path of the property that you want to replace')
   .option('-f, --filename <filename>', 'YAML file')
   .action(options => run('updateResource', options))
@@ -57,6 +61,7 @@ program
   .option('-t, --resource-type <resourceType>', 'resource type')
   .option('-n, --resource-name <resourceName>', 'resource name')
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
+  .option('--ignore <ignoredNamespace>', 'namespaces to ignore', collect, [])
   .option('--replicas <replicas>', 'number of replicas')
   .action(options => run('scale', options))
 
