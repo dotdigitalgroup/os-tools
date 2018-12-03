@@ -48,7 +48,7 @@ program
   .option('-n, --resource-name <resourceName>', 'resource name')
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
   .option('--ignore <ignoredNamespace>', 'namespaces to ignore', collect, [])
-  .option('-p, --property-path <propertyPath>', 'the path of the property that you want to replace')
+  .option('-p, --property-path <propertyPath>', 'the path of the property that you want to add/replace')
   .option('-f, --filename <filename>', 'YAML file')
   .action(options => run('updateResource', options))
 
