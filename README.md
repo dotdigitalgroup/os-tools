@@ -79,3 +79,14 @@ $ os-tools scale \
   --namespace-regex '^project-name-' \
   --replicas 1
 ```
+
+### Checking source references
+
+To check from which source reference the latest build was generated, you can use the following subcommand:
+
+```
+$ os-tools check-source-refs \
+  --namespace-regex '^project-name-' \
+  --resources-names app1
+  --resources-names app2
+```
