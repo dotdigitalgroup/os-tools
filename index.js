@@ -64,6 +64,7 @@ program
   .command('check-source-refs')
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
   .option('-n, --resources-names <resourcesNames>', 'resources names', collect, [])
+  .option('--environment-alias <environmentAlias>', 'environment alias')
   .action(options => run('checkSourceRefs', options))
 
 program.parse(process.argv)
