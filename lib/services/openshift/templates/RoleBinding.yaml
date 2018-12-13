@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: RoleBinding
+metadata:
+  generateName: null
+  namespace: null
+roleRef:
+  name: null
+subjects: []
