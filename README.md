@@ -87,6 +87,17 @@ To check from which source reference the latest build was generated, you can use
 ```
 $ os-tools check-source-refs \
   --namespace-regex '^project-name-' \
-  --resources-names app1
+  --resources-names app1 \
   --resources-names app2
+```
+
+### Updating membership
+
+To add a new member to a namespace (with "edit" role, for example), you can use the following subcommand:
+
+```
+$ os-tools membership \
+  --namespace-regex '^project-name-' \
+  --user 'User Name' \
+  --role edit
 ```

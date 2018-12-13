@@ -67,4 +67,11 @@ program
   .option('--environment-alias <environmentAlias>', 'environment alias')
   .action(options => run('checkSourceRefs', options))
 
+program
+  .command('membership')
+  .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
+  .option('--user <user>', 'user name')
+  .option('--role <role>', 'project role')
+  .action(options => run('membership', options))
+
 program.parse(process.argv)
