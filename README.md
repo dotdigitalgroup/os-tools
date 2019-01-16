@@ -101,3 +101,14 @@ $ os-tools membership \
   --user 'User Name' \
   --role edit
 ```
+
+### Checking defined resources
+
+To check requests and limits (cpu/memory) that were defined within containers, you can use the following subcommand:
+
+```
+$ os-tools check-resources \
+  --namespace-regex '^project-name-' \
+  --resources-names app1 \
+  --resources-names app2
+```
