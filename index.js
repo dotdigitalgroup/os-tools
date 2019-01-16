@@ -74,4 +74,12 @@ program
   .option('--role <role>', 'project role')
   .action(options => run('membership', options))
 
+program
+  .command('check-resources')
+  .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
+  .option('-n, --resources-names <resourcesNames>', 'resources names', collect, [])
+  .action(options => run('checkResources', options))
+
 program.parse(process.argv)
+
+if (!program.args.length) program.outputHelp()
