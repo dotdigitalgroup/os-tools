@@ -65,6 +65,7 @@ program
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
   .option('-n, --resources-names <resourcesNames>', 'resources names', collect, [])
   .option('--environment-alias <environmentAlias>', 'environment alias')
+  .option('--repeat <repeat>', 'repeat every X seconds')
   .action(options => run('checkSourceRefs', options))
 
 program
