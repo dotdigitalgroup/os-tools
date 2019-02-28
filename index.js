@@ -76,6 +76,7 @@ program
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
   .option('--user <user>', 'user name')
   .option('--role <role>', 'project role')
+  .option('--revoke', 'revoke permission')
   .action(options => run('membership', options))
 
 program
