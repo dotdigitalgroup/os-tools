@@ -86,6 +86,16 @@ program
   .option('--environment-alias <environmentAlias>', 'environment alias')
   .action(options => run('checkResources', options))
 
+program
+  .command('check-env')
+  .option('-t, --resource-type <resourceType>', 'resource type')
+  .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
+  .option('-v, --variable <variable>', 'variable (value)', collect, [])
+  .option('--search-by-value', 'search by value instead of name')
+  .option('--whole-word', 'search for the exact term')
+  .option('--environment-alias <environmentAlias>', 'environment alias')
+  .action(options => run('checkEnv', options))
+
 program.parse(process.argv)
 
 if (!program.args.length) program.outputHelp()
