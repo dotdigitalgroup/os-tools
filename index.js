@@ -31,6 +31,7 @@ program
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
   .option('--ignore <ignoredNamespace>', 'namespaces to ignore', collect, [])
   .option('-v, --variable <variable>', 'variable with name and value', collect, [])
+  .option('--environment-alias <environmentAlias>', 'environment alias')
   .action(options => run('setEnv', options))
 
 program
@@ -40,6 +41,7 @@ program
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
   .option('--ignore <ignoredNamespace>', 'namespaces to ignore', collect, [])
   .option('-s, --source-ref [sourceRef]', 'tag/branch/commit hash from Git')
+  .option('--environment-alias <environmentAlias>', 'environment alias')
   .action(options => run('instantiate', options))
 
 program
@@ -57,6 +59,7 @@ program
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
   .option('-n, --resources-names <resourcesNames>', 'resources names', collect, [])
   .option('--ignore <ignoredNamespace>', 'namespaces to ignore', collect, [])
+  .option('--environment-alias <environmentAlias>', 'environment alias')
   .option('--replicas <replicas>', 'number of replicas')
   .action(options => run('scale', options))
 
@@ -73,13 +76,25 @@ program
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
   .option('--user <user>', 'user name')
   .option('--role <role>', 'project role')
+  .option('--revoke', 'revoke permission')
   .action(options => run('membership', options))
 
 program
   .command('check-resources')
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
   .option('-n, --resources-names <resourcesNames>', 'resources names', collect, [])
+  .option('--environment-alias <environmentAlias>', 'environment alias')
   .action(options => run('checkResources', options))
+
+program
+  .command('check-env')
+  .option('-t, --resource-type <resourceType>', 'resource type')
+  .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
+  .option('-v, --variable <variable>', 'variable (value)', collect, [])
+  .option('--search-by-value', 'search by value instead of name')
+  .option('--whole-word', 'search for the exact term')
+  .option('--environment-alias <environmentAlias>', 'environment alias')
+  .action(options => run('checkEnv', options))
 
 program.parse(process.argv)
 
