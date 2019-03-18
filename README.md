@@ -112,3 +112,24 @@ $ os-tools check-resources \
   --resources-names app1 \
   --resources-names app2
 ```
+
+### Generating an environment variables report
+
+To generate a TSV report containing all the namespaces that contains some environment variable, you can use the following subcommand:
+
+```
+$ os-tools check-env \
+  --resource-type build \
+  --namespace-regex '^project-name-' \
+  --variable SOME_VARIABLE
+```
+
+### Searching namespaces by external route
+
+To find a namespace by route, you can use the following subcommand:
+
+```
+$ os-tools check-env \
+  --namespace-regex '^project-name-' \
+  --hostname example.com
+```

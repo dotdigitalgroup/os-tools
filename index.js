@@ -96,6 +96,13 @@ program
   .option('--environment-alias <environmentAlias>', 'environment alias')
   .action(options => run('checkEnv', options))
 
+program
+  .command('check-route')
+  .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
+  .option('--hostname <hostname>', 'hostname')
+  .option('--environment-alias <environmentAlias>', 'environment alias')
+  .action(options => run('checkRoute', options))
+
 program.parse(process.argv)
 
 if (!program.args.length) program.outputHelp()
