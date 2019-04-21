@@ -103,6 +103,13 @@ program
   .option('--environment-alias <environmentAlias>', 'environment alias')
   .action(options => run('checkRoute', options))
 
+program
+  .command('export-resources')
+  .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
+  .option('-n, --resources-names <resourcesNames>', 'resources names', collect, [])
+  .option('--environment-alias <environmentAlias>', 'environment alias')
+  .action(options => run('exportResources', options))
+
 program.parse(process.argv)
 
 if (!program.args.length) program.outputHelp()
