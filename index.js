@@ -52,6 +52,8 @@ program
   .option('--ignore <ignoredNamespace>', 'namespaces to ignore', collect, [])
   .option('-p, --property-path <propertyPath>', 'the path of the property that you want to add/replace')
   .option('-f, --filename <filename>', 'YAML file')
+  .option('--filter-path <filter-path>', 'path to filter')
+  .option('--filter-term <filter-term>', 'term to filter')
   .action(options => run('updateResource', options))
 
 program
