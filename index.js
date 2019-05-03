@@ -47,7 +47,7 @@ program
 program
   .command('update-resource')
   .option('-t, --resource-type <resourceType>', 'resource type')
-  .option('-n, --resource-name <resourceName>', 'resource name')
+  .option('-n, --resources-names <resourcesNames>', 'resources names', collect, [])
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
   .option('--ignore <ignoredNamespace>', 'namespaces to ignore', collect, [])
   .option('-p, --property-path <propertyPath>', 'the path of the property that you want to add/replace')
