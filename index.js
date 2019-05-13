@@ -47,11 +47,15 @@ program
 program
   .command('update-resource')
   .option('-t, --resource-type <resourceType>', 'resource type')
-  .option('-n, --resource-name <resourceName>', 'resource name')
+  .option('-n, --resources-names <resourcesNames>', 'resources names', collect, [])
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
   .option('--ignore <ignoredNamespace>', 'namespaces to ignore', collect, [])
   .option('-p, --property-path <propertyPath>', 'the path of the property that you want to add/replace')
   .option('-f, --filename <filename>', 'YAML file')
+  .option('--filter-path <filterPath>', 'path to filter')
+  .option('--filter-term <filterTerm>', 'term to filter')
+  .option('--update-only', 'do not create new nodes, only update')
+  .option('--ignore-path <ignorePath>', 'paths to ignore', collect, [])
   .action(options => run('updateResource', options))
 
 program
@@ -67,6 +71,7 @@ program
   .command('check-source-refs')
   .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
   .option('-n, --resources-names <resourcesNames>', 'resources names', collect, [])
+  .option('--ignore <ignoredNamespace>', 'namespaces to ignore', collect, [])
   .option('--environment-alias <environmentAlias>', 'environment alias')
   .option('--repeat <repeat>', 'repeat every X seconds')
   .action(options => run('checkSourceRefs', options))
@@ -102,6 +107,13 @@ program
   .option('--hostname <hostname>', 'hostname')
   .option('--environment-alias <environmentAlias>', 'environment alias')
   .action(options => run('checkRoute', options))
+
+program
+  .command('export-resources')
+  .option('-r, --namespace-regex <namespaceRegex>', 'regular expression to filter the namespace')
+  .option('-n, --resources-names <resourcesNames>', 'resources names', collect, [])
+  .option('--environment-alias <environmentAlias>', 'environment alias')
+  .action(options => run('exportResources', options))
 
 program.parse(process.argv)
 
